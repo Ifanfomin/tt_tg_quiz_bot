@@ -3,8 +3,11 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils import executor
 from collections import defaultdict
+from dotenv import load_dotenv
+import os
 
-API_TOKEN = 'Your token here'
+load_dotenv()
+API_TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
